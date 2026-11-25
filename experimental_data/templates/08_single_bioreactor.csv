@@ -1,0 +1,4 @@
+# Single bioreactor (with/without scaffold): flow vs. differential pressure
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,dataset,temperature_c,pump_flow_ml_min,param:reactor_paths.0.reactor.scaffold.permeability_m2,p_thr_out_pa,p_rx_out_pa,u_p_thr_out_pa,notes

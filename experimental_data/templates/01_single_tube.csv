@@ -1,0 +1,4 @@
+# Single straight tube: flow vs. pressure drop (layout single_line)
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,dataset,temperature_c,pump_flow_ml_min,param:single_line.test_tube.inner_diameter_mm,param:single_line.test_tube.length_m,p_test_in_pa,p_test_out_pa,u_p_test_in_pa,u_p_test_out_pa,notes

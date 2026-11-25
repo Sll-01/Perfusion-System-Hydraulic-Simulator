@@ -1,0 +1,4 @@
+# Different tube inner diameters at constant length
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,dataset,temperature_c,pump_flow_ml_min,param:single_line.test_tube.inner_diameter_mm,p_test_in_pa,p_test_out_pa,u_p_test_in_pa,notes

@@ -1,0 +1,4 @@
+# Splitter characterisation: flow per outlet with identical downstream paths
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,dataset,temperature_c,pump_flow_ml_min,Q_reactor_1_ml_min,Q_reactor_2_ml_min,Q_reactor_3_ml_min,Q_reactor_4_ml_min,p_S1_pa,u_Q_reactor_1_ml_min,notes

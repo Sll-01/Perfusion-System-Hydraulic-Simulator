@@ -1,0 +1,4 @@
+# Complete system with bypass
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,time_s,dataset,temperature_c,pump_speed_rpm,pump_flow_ml_min,throttle_1_opening_percent,throttle_2_opening_percent,throttle_3_opening_percent,throttle_4_opening_percent,bypass_opening_percent,Q_total_ml_min,Q_reactor_1_ml_min,Q_reactor_2_ml_min,Q_reactor_3_ml_min,Q_reactor_4_ml_min,Q_bypass_ml_min,pump_dp_pa,p_rx1_in_pa,u_Q_reactor_1_ml_min,u_pump_dp_pa,notes

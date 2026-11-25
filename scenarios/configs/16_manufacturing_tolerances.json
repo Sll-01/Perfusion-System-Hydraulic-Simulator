@@ -1,0 +1,1045 @@
+{
+  "software": "Perfusion System Hydraulic Simulator",
+  "software_version": "1.0.0",
+  "name": "16 - Manufacturing tolerances",
+  "project_version": 1,
+  "created": "2026-11-25T09:14:22",
+  "modified": "2026-11-25T09:14:22",
+  "changelog": [
+    {
+      "version": 1,
+      "timestamp": "2026-11-25T09:14:22",
+      "author": "",
+      "note": "created"
+    }
+  ],
+  "config": {
+    "name": "Scenario 6 - four identical parallel bioreactors (example)",
+    "description": "EXAMPLE PARAMETERS - not based on measurements. Replace by real geometry / measured data.",
+    "layout": "full",
+    "software_version": "1.0.0",
+    "fluid": {
+      "fluid_type": "culture_medium",
+      "name": "Cell culture medium (example values)",
+      "temperature_c": 37.0,
+      "temperature_dependent": true,
+      "density_ratio": null,
+      "viscosity_ratio": null,
+      "density_override": null,
+      "dynamic_viscosity_override": null,
+      "kinematic_viscosity_override": null,
+      "custom_density": 1000.0,
+      "custom_viscosity": 0.001,
+      "custom_reference_temperature_c": 20.0,
+      "vapor_pressure_pa": 6300.0,
+      "notes": "Default culture-medium properties are ASSUMPTIONS (ratio to water); replace by measured values."
+    },
+    "reservoir": {
+      "name": "Medium reservoir",
+      "fill_volume_ml": 20.0,
+      "gauge_pressure_pa": 0.0
+    },
+    "pump": {
+      "name": "Stackable Perfusion Pump (example parameters)",
+      "mode": "A_constant_flow",
+      "flow_rate_ml_min": 5.0,
+      "pressure_difference_pa": 2000.0,
+      "speed_rpm": 30.0,
+      "curve": [
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 0.0,
+          "dp_pa": 8000.0,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 1.2000000000000002,
+          "dp_pa": 7284.4582472000675,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 2.4000000000000004,
+          "dp_pa": 5976.142297492236,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 3.6000000000000005,
+          "dp_pa": 4281.935987640879,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 4.800000000000001,
+          "dp_pa": 2275.6659776005376,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 30.0,
+          "flow_ml_min": 6.0,
+          "dp_pa": 0.0,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 0.0,
+          "dp_pa": 16000.0,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 2.4000000000000004,
+          "dp_pa": 14568.916494400135,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 4.800000000000001,
+          "dp_pa": 11952.284594984472,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 7.200000000000001,
+          "dp_pa": 8563.871975281758,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 9.600000000000001,
+          "dp_pa": 4551.331955201075,
+          "power_w": null,
+          "efficiency": null
+        },
+        {
+          "speed_rpm": 60.0,
+          "flow_ml_min": 12.0,
+          "dp_pa": 0.0,
+          "power_w": null,
+          "efficiency": null
+        }
+      ],
+      "displacement_ml_per_rev": null,
+      "pump_tube_inner_diameter_mm": 1.6,
+      "track_radius_mm": 10.5,
+      "n_rollers": 3,
+      "volumetric_efficiency": 0.95,
+      "slip_coefficient_ml_min_per_kpa": 0.0,
+      "max_pressure_pa": 30000.0,
+      "pulsation": {
+        "enabled": false,
+        "relative_amplitude": 0.3,
+        "n_periods": 3,
+        "points_per_period": 60
+      },
+      "provenance": "ASSUMPTION - replace with measured data of the Stackable Perfusion Pump"
+    },
+    "suction_tube": {
+      "name": "suction tube (reservoir -> pump)",
+      "length_m": 0.25,
+      "inner_diameter_mm": 1.6,
+      "outer_diameter_mm": 3.2,
+      "wall_thickness_mm": null,
+      "material": "silicone",
+      "roughness_um": null,
+      "elevation_change_mm": 0.0,
+      "bends": [],
+      "fittings": [],
+      "area_changes": [],
+      "extra_K": 0.0,
+      "constrictions": [],
+      "notes": ""
+    },
+    "pump_outlet_tube": {
+      "name": "pump outlet tube (pump -> splitter 1)",
+      "length_m": 0.25,
+      "inner_diameter_mm": 1.6,
+      "outer_diameter_mm": 3.2,
+      "wall_thickness_mm": null,
+      "material": "silicone",
+      "roughness_um": null,
+      "elevation_change_mm": 0.0,
+      "bends": [],
+      "fittings": [],
+      "area_changes": [],
+      "extra_K": 0.0,
+      "constrictions": [],
+      "notes": ""
+    },
+    "return_tube": {
+      "name": "return tube (splitter 2 -> reservoir)",
+      "length_m": 0.3,
+      "inner_diameter_mm": 1.6,
+      "outer_diameter_mm": 3.2,
+      "wall_thickness_mm": null,
+      "material": "silicone",
+      "roughness_um": null,
+      "elevation_change_mm": 0.0,
+      "bends": [],
+      "fittings": [],
+      "area_changes": [],
+      "extra_K": 0.0,
+      "constrictions": [],
+      "notes": ""
+    },
+    "splitter_in": {
+      "name": "Splitter 1 (distributor)",
+      "role": "distributor",
+      "geometry": "radial manifold (example)",
+      "mode": "symmetric",
+      "common_port": {
+        "name": "common",
+        "port_diameter_mm": 1.6,
+        "channel_diameter_mm": 1.6,
+        "channel_length_mm": 5.0,
+        "K": 0.5,
+        "resistance": 0.0,
+        "angle_deg": 90.0,
+        "position": [
+          0.0,
+          0.0
+        ]
+      },
+      "branch_ports": [
+        {
+          "name": "port 1",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 2",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 3",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 4",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "hub_volume_ul": 50.0,
+      "provenance": "example geometry; K values are ASSUMPTIONS to be calibrated"
+    },
+    "splitter_out": {
+      "name": "Splitter 2 (collector)",
+      "role": "collector",
+      "geometry": "radial manifold (example)",
+      "mode": "symmetric",
+      "common_port": {
+        "name": "common",
+        "port_diameter_mm": 1.6,
+        "channel_diameter_mm": 1.6,
+        "channel_length_mm": 5.0,
+        "K": 0.5,
+        "resistance": 0.0,
+        "angle_deg": 90.0,
+        "position": [
+          0.0,
+          0.0
+        ]
+      },
+      "branch_ports": [
+        {
+          "name": "port 1",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 2",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 3",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "port 4",
+          "port_diameter_mm": 1.6,
+          "channel_diameter_mm": 1.6,
+          "channel_length_mm": 8.0,
+          "K": 0.5,
+          "resistance": 0.0,
+          "angle_deg": 90.0,
+          "position": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "hub_volume_ul": 50.0,
+      "provenance": "example geometry; K values are ASSUMPTIONS to be calibrated"
+    },
+    "reactor_paths": [
+      {
+        "name": "Reactor path 1",
+        "tube_to_throttle": {
+          "name": "R1 tube splitter1 -> throttle",
+          "length_m": 0.1,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "throttle": {
+          "name": "Throttle 1",
+          "opening_percent": 100.0,
+          "model": "orifice_diameter",
+          "characteristic": "linear",
+          "rangeability": 30.0,
+          "opening_table": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              1.0
+            ]
+          ],
+          "resistance_open": 5000000000.0,
+          "max_diameter_mm": 1.0,
+          "max_area_mm2": null,
+          "throttle_length_mm": 2.0,
+          "discharge_coefficient": 0.7,
+          "reference_diameter_mm": 1.6,
+          "K_open": 2.0,
+          "kv_max": null,
+          "cv_max": null,
+          "dp_curve_points": [],
+          "calibration_factor": 1.0,
+          "internal_volume_ul": 20.0,
+          "provenance": "example parameters (ASSUMPTION)"
+        },
+        "tube_to_reactor": {
+          "name": "R1 tube throttle -> reactor",
+          "length_m": 0.15,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "reactor": {
+          "name": "Bioreactor 1",
+          "state": "with_scaffold",
+          "chamber_volume_ml": null,
+          "chamber_diameter_mm": 8.0,
+          "chamber_height_mm": 10.0,
+          "inlet_diameter_mm": 1.6,
+          "outlet_diameter_mm": 1.6,
+          "inlet_channel_length_mm": 5.0,
+          "outlet_channel_length_mm": 5.0,
+          "internal_resistance": 0.0,
+          "inlet_K": null,
+          "outlet_K": null,
+          "extra_K": 0.0,
+          "holder_K": 0.5,
+          "scaffold": {
+            "name": "Scaffold 1",
+            "diameter_mm": 8.0,
+            "height_mm": 3.0,
+            "area_override_mm2": null,
+            "porosity": 0.8,
+            "permeability_m2": 1e-10,
+            "use_forchheimer": false,
+            "forchheimer_beta_per_m": null,
+            "forchheimer_cf": 0.55,
+            "pore_model": "cylindrical_capillary",
+            "provenance": "example parameters (ASSUMPTION)"
+          },
+          "permeability_factor": 0.2,
+          "blocked_fraction": 0.5,
+          "experimental_resistance": null,
+          "elevation_change_mm": 0.0,
+          "provenance": "example geometry (ASSUMPTION)"
+        },
+        "tube_to_collector": {
+          "name": "R1 tube reactor -> splitter2",
+          "length_m": 0.25,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        }
+      },
+      {
+        "name": "Reactor path 2",
+        "tube_to_throttle": {
+          "name": "R2 tube splitter1 -> throttle",
+          "length_m": 0.1,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "throttle": {
+          "name": "Throttle 2",
+          "opening_percent": 100.0,
+          "model": "orifice_diameter",
+          "characteristic": "linear",
+          "rangeability": 30.0,
+          "opening_table": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              1.0
+            ]
+          ],
+          "resistance_open": 5000000000.0,
+          "max_diameter_mm": 1.0,
+          "max_area_mm2": null,
+          "throttle_length_mm": 2.0,
+          "discharge_coefficient": 0.7,
+          "reference_diameter_mm": 1.6,
+          "K_open": 2.0,
+          "kv_max": null,
+          "cv_max": null,
+          "dp_curve_points": [],
+          "calibration_factor": 1.0,
+          "internal_volume_ul": 20.0,
+          "provenance": "example parameters (ASSUMPTION)"
+        },
+        "tube_to_reactor": {
+          "name": "R2 tube throttle -> reactor",
+          "length_m": 0.15,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "reactor": {
+          "name": "Bioreactor 2",
+          "state": "with_scaffold",
+          "chamber_volume_ml": null,
+          "chamber_diameter_mm": 8.0,
+          "chamber_height_mm": 10.0,
+          "inlet_diameter_mm": 1.6,
+          "outlet_diameter_mm": 1.6,
+          "inlet_channel_length_mm": 5.0,
+          "outlet_channel_length_mm": 5.0,
+          "internal_resistance": 0.0,
+          "inlet_K": null,
+          "outlet_K": null,
+          "extra_K": 0.0,
+          "holder_K": 0.5,
+          "scaffold": {
+            "name": "Scaffold 2",
+            "diameter_mm": 8.0,
+            "height_mm": 3.0,
+            "area_override_mm2": null,
+            "porosity": 0.8,
+            "permeability_m2": 1e-10,
+            "use_forchheimer": false,
+            "forchheimer_beta_per_m": null,
+            "forchheimer_cf": 0.55,
+            "pore_model": "cylindrical_capillary",
+            "provenance": "example parameters (ASSUMPTION)"
+          },
+          "permeability_factor": 0.2,
+          "blocked_fraction": 0.5,
+          "experimental_resistance": null,
+          "elevation_change_mm": 0.0,
+          "provenance": "example geometry (ASSUMPTION)"
+        },
+        "tube_to_collector": {
+          "name": "R2 tube reactor -> splitter2",
+          "length_m": 0.25,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        }
+      },
+      {
+        "name": "Reactor path 3",
+        "tube_to_throttle": {
+          "name": "R3 tube splitter1 -> throttle",
+          "length_m": 0.1,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "throttle": {
+          "name": "Throttle 3",
+          "opening_percent": 100.0,
+          "model": "orifice_diameter",
+          "characteristic": "linear",
+          "rangeability": 30.0,
+          "opening_table": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              1.0
+            ]
+          ],
+          "resistance_open": 5000000000.0,
+          "max_diameter_mm": 1.0,
+          "max_area_mm2": null,
+          "throttle_length_mm": 2.0,
+          "discharge_coefficient": 0.7,
+          "reference_diameter_mm": 1.6,
+          "K_open": 2.0,
+          "kv_max": null,
+          "cv_max": null,
+          "dp_curve_points": [],
+          "calibration_factor": 1.0,
+          "internal_volume_ul": 20.0,
+          "provenance": "example parameters (ASSUMPTION)"
+        },
+        "tube_to_reactor": {
+          "name": "R3 tube throttle -> reactor",
+          "length_m": 0.15,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "reactor": {
+          "name": "Bioreactor 3",
+          "state": "with_scaffold",
+          "chamber_volume_ml": null,
+          "chamber_diameter_mm": 8.0,
+          "chamber_height_mm": 10.0,
+          "inlet_diameter_mm": 1.6,
+          "outlet_diameter_mm": 1.6,
+          "inlet_channel_length_mm": 5.0,
+          "outlet_channel_length_mm": 5.0,
+          "internal_resistance": 0.0,
+          "inlet_K": null,
+          "outlet_K": null,
+          "extra_K": 0.0,
+          "holder_K": 0.5,
+          "scaffold": {
+            "name": "Scaffold 3",
+            "diameter_mm": 8.0,
+            "height_mm": 3.0,
+            "area_override_mm2": null,
+            "porosity": 0.8,
+            "permeability_m2": 1e-10,
+            "use_forchheimer": false,
+            "forchheimer_beta_per_m": null,
+            "forchheimer_cf": 0.55,
+            "pore_model": "cylindrical_capillary",
+            "provenance": "example parameters (ASSUMPTION)"
+          },
+          "permeability_factor": 0.2,
+          "blocked_fraction": 0.5,
+          "experimental_resistance": null,
+          "elevation_change_mm": 0.0,
+          "provenance": "example geometry (ASSUMPTION)"
+        },
+        "tube_to_collector": {
+          "name": "R3 tube reactor -> splitter2",
+          "length_m": 0.25,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        }
+      },
+      {
+        "name": "Reactor path 4",
+        "tube_to_throttle": {
+          "name": "R4 tube splitter1 -> throttle",
+          "length_m": 0.1,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "throttle": {
+          "name": "Throttle 4",
+          "opening_percent": 100.0,
+          "model": "orifice_diameter",
+          "characteristic": "linear",
+          "rangeability": 30.0,
+          "opening_table": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              1.0
+            ]
+          ],
+          "resistance_open": 5000000000.0,
+          "max_diameter_mm": 1.0,
+          "max_area_mm2": null,
+          "throttle_length_mm": 2.0,
+          "discharge_coefficient": 0.7,
+          "reference_diameter_mm": 1.6,
+          "K_open": 2.0,
+          "kv_max": null,
+          "cv_max": null,
+          "dp_curve_points": [],
+          "calibration_factor": 1.0,
+          "internal_volume_ul": 20.0,
+          "provenance": "example parameters (ASSUMPTION)"
+        },
+        "tube_to_reactor": {
+          "name": "R4 tube throttle -> reactor",
+          "length_m": 0.15,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        },
+        "reactor": {
+          "name": "Bioreactor 4",
+          "state": "with_scaffold",
+          "chamber_volume_ml": null,
+          "chamber_diameter_mm": 8.0,
+          "chamber_height_mm": 10.0,
+          "inlet_diameter_mm": 1.6,
+          "outlet_diameter_mm": 1.6,
+          "inlet_channel_length_mm": 5.0,
+          "outlet_channel_length_mm": 5.0,
+          "internal_resistance": 0.0,
+          "inlet_K": null,
+          "outlet_K": null,
+          "extra_K": 0.0,
+          "holder_K": 0.5,
+          "scaffold": {
+            "name": "Scaffold 4",
+            "diameter_mm": 8.0,
+            "height_mm": 3.0,
+            "area_override_mm2": null,
+            "porosity": 0.8,
+            "permeability_m2": 1e-10,
+            "use_forchheimer": false,
+            "forchheimer_beta_per_m": null,
+            "forchheimer_cf": 0.55,
+            "pore_model": "cylindrical_capillary",
+            "provenance": "example parameters (ASSUMPTION)"
+          },
+          "permeability_factor": 0.2,
+          "blocked_fraction": 0.5,
+          "experimental_resistance": null,
+          "elevation_change_mm": 0.0,
+          "provenance": "example geometry (ASSUMPTION)"
+        },
+        "tube_to_collector": {
+          "name": "R4 tube reactor -> splitter2",
+          "length_m": 0.25,
+          "inner_diameter_mm": 1.6,
+          "outer_diameter_mm": 3.2,
+          "wall_thickness_mm": null,
+          "material": "silicone",
+          "roughness_um": null,
+          "elevation_change_mm": 0.0,
+          "bends": [],
+          "fittings": [
+            {
+              "name": "Luer connector",
+              "count": 1,
+              "K": 0.2,
+              "K1": 0.0,
+              "volume_ul": 0.0
+            }
+          ],
+          "area_changes": [],
+          "extra_K": 0.0,
+          "constrictions": [],
+          "notes": ""
+        }
+      }
+    ],
+    "bypass": {
+      "enabled": false,
+      "integration": "integrated_port",
+      "tube_upstream": {
+        "name": "bypass tube (splitter 1 -> throttle)",
+        "length_m": 0.15,
+        "inner_diameter_mm": 1.6,
+        "outer_diameter_mm": 3.2,
+        "wall_thickness_mm": null,
+        "material": "silicone",
+        "roughness_um": null,
+        "elevation_change_mm": 0.0,
+        "bends": [],
+        "fittings": [],
+        "area_changes": [],
+        "extra_K": 0.0,
+        "constrictions": [],
+        "notes": ""
+      },
+      "throttle": {
+        "name": "bypass throttle",
+        "opening_percent": 30.0,
+        "model": "orifice_diameter",
+        "characteristic": "linear",
+        "rangeability": 30.0,
+        "opening_table": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            1.0
+          ]
+        ],
+        "resistance_open": 5000000000.0,
+        "max_diameter_mm": 1.0,
+        "max_area_mm2": null,
+        "throttle_length_mm": 2.0,
+        "discharge_coefficient": 0.7,
+        "reference_diameter_mm": 1.6,
+        "K_open": 2.0,
+        "kv_max": null,
+        "cv_max": null,
+        "dp_curve_points": [],
+        "calibration_factor": 1.0,
+        "internal_volume_ul": 20.0,
+        "provenance": "example parameters (ASSUMPTION)"
+      },
+      "tube_downstream": {
+        "name": "bypass tube (throttle -> splitter 2)",
+        "length_m": 0.15,
+        "inner_diameter_mm": 1.6,
+        "outer_diameter_mm": 3.2,
+        "wall_thickness_mm": null,
+        "material": "silicone",
+        "roughness_um": null,
+        "elevation_change_mm": 0.0,
+        "bends": [],
+        "fittings": [],
+        "area_changes": [],
+        "extra_K": 0.0,
+        "constrictions": [],
+        "notes": ""
+      },
+      "splitter_port_in": {
+        "name": "bypass port",
+        "port_diameter_mm": 1.6,
+        "channel_diameter_mm": 1.6,
+        "channel_length_mm": 8.0,
+        "K": 0.5,
+        "resistance": 0.0,
+        "angle_deg": 90.0,
+        "position": [
+          0.0,
+          0.0
+        ]
+      },
+      "splitter_port_out": {
+        "name": "bypass port",
+        "port_diameter_mm": 1.6,
+        "channel_diameter_mm": 1.6,
+        "channel_length_mm": 8.0,
+        "K": 0.5,
+        "resistance": 0.0,
+        "angle_deg": 90.0,
+        "position": [
+          0.0,
+          0.0
+        ]
+      },
+      "tee_in": {
+        "name": "T-piece feed",
+        "inner_diameter_mm": 1.6,
+        "K_run": 0.4,
+        "K_branch": 1.0,
+        "volume_ul": 15.0
+      },
+      "tee_out": {
+        "name": "T-piece return",
+        "inner_diameter_mm": 1.6,
+        "K_run": 0.4,
+        "K_branch": 1.0,
+        "volume_ul": 15.0
+      },
+      "extra_resistance": 0.0
+    },
+    "single_line": {
+      "test_tube": {
+        "name": "test tube",
+        "length_m": 0.5,
+        "inner_diameter_mm": 1.6,
+        "outer_diameter_mm": 3.2,
+        "wall_thickness_mm": null,
+        "material": "silicone",
+        "roughness_um": null,
+        "elevation_change_mm": 0.0,
+        "bends": [],
+        "fittings": [],
+        "area_changes": [],
+        "extra_K": 0.0,
+        "constrictions": [],
+        "notes": ""
+      },
+      "include_throttle": false,
+      "include_reactor": false
+    },
+    "solver": {
+      "tol_mass_rel": 1e-10,
+      "tol_pressure_pa": 1e-06,
+      "max_iterations": 100,
+      "pressure_scale_pa": 1000.0,
+      "flow_scale_m3s": null,
+      "use_fallback": true,
+      "turbulent_model": "colebrook",
+      "re_laminar": 2000.0,
+      "re_turbulent": 4000.0,
+      "allow_backflow": true
+    }
+  }
+}

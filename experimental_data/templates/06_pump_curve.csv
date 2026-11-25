@@ -1,0 +1,4 @@
+# Pump characteristic: speed, flow, differential pressure, optional power (import in Pump page)
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+speed_rpm,flow_ml_min,dp_pa,power_w,efficiency,u_flow_ml_min,u_dp_pa,notes

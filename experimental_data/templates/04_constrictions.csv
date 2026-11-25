@@ -1,0 +1,4 @@
+# Tube constriction (degree / length) vs. pressure drop
+# Units: flow mL/min, pressure Pa (gauge), length m / mm as in column name, temperature degC.
+# Columns u_<name> hold standard uncertainties. 'dataset' = calibration | validation.
+point_id,dataset,temperature_c,pump_flow_ml_min,param:single_line.test_tube.constrictions.0.degree_percent,param:single_line.test_tube.constrictions.0.length_mm,p_test_in_pa,p_test_out_pa,notes
